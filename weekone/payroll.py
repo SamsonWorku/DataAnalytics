@@ -24,7 +24,7 @@ for emp_no, emp_detail in pay_dict.items():
 	hours = emp_detail[2]
 	if hours > 40:
 		ot = (hours - 40)*1.5
-		pay = (ot + hours)*emp_detail[1]
+		pay = (ot + 40)*emp_detail[1]
 	elif hours:
 		pay = hours*emp_detail[1]
 		
