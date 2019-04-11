@@ -1,4 +1,4 @@
-prompt = "\ntell me something that is on your mind"
+prompt = "\ntell me something or something else that is on your mind"
 prompt += "\nEnter 'quit' or 'I'm feeling great: "
 new_list = []
 new_statement = []
@@ -32,17 +32,24 @@ while active:
 				new_list.append(ea)
 
 		new_statement = " ".join(new_list)	
-		print((new_statement), '?')
-		if counter == 0:
-			question = input("Can you elaborate on that please?")
-			counter = counter + 1
-			print(counter)
-		if counter == 1:
-			statement = "It seems " + new_statement + "?"
-			counter = counter + 2
-		if counter == 2:
-			question = input("Do you think that is reasonable?")
-			counter = 0
+		print(new_statement, '?')
+		print()
+		#print('finished first while loop headed to next, counter 0')
+		counter = 0	
+		while counter != 3:
+			if counter == 0:
+				question = input("Can you elaborate on that please?")
+				counter = counter + 1
+				#print(counter)
+			elif counter == 1:
+				statement = "It seems " + new_statement + "?"
+				print(statement)
+				counter = 2
+				#print(counter)
+			elif counter == 2:
+				question = input("Do you think that is reasonable?")
+				counter = 3
+				#print(counter)
 		
 		
 		
